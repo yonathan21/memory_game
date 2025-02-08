@@ -24,7 +24,10 @@ function flipCard(e){
 function matchcards(img1, img2){
 
   if(img1 === img2){
-    return console.log('card matched');
+    cardOne.removeEventListener("click", flipCard);
+    cardTwo.removeEventListener("click", flipCard);
+    cardOne = cardTwo = "";
+    return;
   }
 
   setTimeout(() => {
@@ -35,6 +38,7 @@ function matchcards(img1, img2){
   setTimeout(() => {
     cardOne.classList.remove('shake', 'flip');
     cardTwo.classList.remove('shake', 'flip');
+    cardOne = cardOne = "";
   }, 1200);
  
 }
