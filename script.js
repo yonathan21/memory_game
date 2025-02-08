@@ -1,8 +1,9 @@
-const main = document.querySelector('.main');
-const row1 = document.querySelector('.row-1');
-const img1 = document.querySelector('.img1');
+const cards = document.querySelectorAll(".card");
 
-img1.addEventListener('click', () => {
-  img1.classList.add('img11');
-  img1.classList.remove('img1');
+function flipCard(e){
+  console.log(e.target);
+}
+
+cards.forEach(card => {
+  card.addEventListener('click', flipCard);
 });
