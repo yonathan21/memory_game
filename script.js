@@ -22,10 +22,14 @@ function flipCard(e){
 }
 
 function matchcards(img1, img2){
+
   if(img1 === img2){
     return console.log('card matched');
   }
-  console.log('not matched');
+
+  cardOne.classList.add('shake');
+  cardTwo.classList.add('shake');
+ 
 }
 
 cards.forEach(card => {
