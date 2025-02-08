@@ -55,12 +55,19 @@ function matchcards(img1, img2){
 function suffleCard(){
   matchedCard = 0;
   cardOne = cardTwo = "";
-  cards.forEach(card => {
+  disableDeck = false;
+  let arr = [1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8];
+  arr.sort(() => Math.random() > 0.5 ? 1 : -1)
+  cards.forEach((card,index) => {
     card.classList.remove('flip');
+    let imgTag = card.querySelector('img');
+    imgTag.src = `photos/img-${arr[index]}.png`
     card.addEventListener('click', flipCard);
   });
 
 }
+
+suffleCard();
 
 cards.forEach(card => {
   card.addEventListener('click', flipCard);
