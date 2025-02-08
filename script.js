@@ -27,8 +27,15 @@ function matchcards(img1, img2){
     return console.log('card matched');
   }
 
-  cardOne.classList.add('shake');
-  cardTwo.classList.add('shake');
+  setTimeout(() => {
+    cardOne.classList.add('shake');
+    cardTwo.classList.add('shake');
+  }, 400);
+
+  setTimeout(() => {
+    cardOne.classList.remove('shake', 'flip');
+    cardTwo.classList.remove('shake', 'flip');
+  }, 1200);
  
 }
 
